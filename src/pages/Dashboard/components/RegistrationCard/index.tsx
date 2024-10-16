@@ -6,32 +6,58 @@ import {
   HiOutlineCalendar,
   HiOutlineTrash,
 } from "react-icons/hi";
+import { useHandleCards } from './useHandleCards'
+import { RegistrationCardProps } from "./interfaces";
 
-type Props = {
-  data: any;
-};
+const RegistrationCard = (props: RegistrationCardProps) => {
+  const { employeeName , email, admissionDate, status, id} = props.data;
+  const { handleCards } = useHandleCards(props.data)
 
-const RegistrationCard = (props: Props) => {
   return (
     <S.Card>
       <S.IconAndText>
         <HiOutlineUser />
-        <h3>{props.data.employeeName}</h3>
+        <h3>{ employeeName }</h3>
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineMail />
-        <p>{props.data.email}</p>
+        <p>{ email }</p>
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineCalendar />
-        <span>{props.data.admissionDate}</span>
+        <span>{ admissionDate }</span>
       </S.IconAndText>
       <S.Actions>
-        <ButtonSmall bgcolor="rgb(255, 145, 154)" >Reprovar</ButtonSmall>
-        <ButtonSmall bgcolor="rgb(155, 229, 155)">Aprovar</ButtonSmall>
-        <ButtonSmall bgcolor="#ff8858">Revisar novamente</ButtonSmall>
+        {
+          (status === 'REVIEW') && (
+            <>
+              <ButtonSmall 
+                $bgcolor="rgb(255, 145, 154)"
+                onClick={() => handleCards('CHANGE_STATUS', id, 'REPROVED')}
+              >
+                Reprovar
+              </ButtonSmall>
 
-        <HiOutlineTrash />
+              <ButtonSmall 
+                $bgcolor="rgb(155, 229, 155)"
+                onClick={() => handleCards('CHANGE_STATUS', id, 'APPROVED')}
+              >
+                Aprovar
+              </ButtonSmall>
+            </>
+          )
+        }
+        
+        { status !== 'REVIEW' && (
+          <ButtonSmall 
+            $bgcolor="#ff8858" 
+            onClick={() => handleCards('CHANGE_STATUS',id, 'REVIEW')}
+          >
+            Revisar novamente
+          </ButtonSmall>
+        )}
+        
+        <HiOutlineTrash onClick={() => handleCards('DELETE',id)} />
       </S.Actions>
     </S.Card>
   );

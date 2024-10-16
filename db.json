@@ -1,14 +1,6 @@
 {
   "registrations": [
     {
-      "admissionDate": "22/10/2023",
-      "email": "luiz@caju.com.br",
-      "employeeName": "Luiz Filho",
-      "status": "APROVED",
-      "cpf": "56642105087",
-      "id": "3"
-    },
-    {
       "id": "1",
       "admissionDate": "22/10/2023",
       "email": "filipe@caju.com.br",
@@ -21,8 +13,56 @@
       "admissionDate": "22/10/2023",
       "email": "jose@caju.com.br",
       "employeeName": "José Leão",
-      "status": "REPROVED",
+      "status": "APPROVED",
       "cpf": "78502270001"
+    },
+    {
+      "id": "3",
+      "admissionDate": "22/10/2023",
+      "email": "luiz@caju.com.br",
+      "employeeName": "Luiz Filho",
+      "status": "REPROVED",
+      "cpf": "65463491089"
+    },
+    {
+      "id": "5",
+      "admissionDate": "22/10/2023",
+      "email": "marcopaulo@caju.com.br",
+      "employeeName": "Marco Paulo",
+      "status": "REPROVED",
+      "cpf": "49087945027"
+    },
+    {
+      "id": "6",
+      "admissionDate": "22/10/2023",
+      "email": "mariadocarmo@caju.com.br",
+      "employeeName": "Maria do Carmo",
+      "status": "REVIEW",
+      "cpf": "84691351043"
+    },
+    {
+      "id": "1729076409604",
+      "employeeName": "Bruce Wayne",
+      "email": "brucewayne@caju.com.br",
+      "cpf": "61661689000",
+      "admissionDate": "2024-10-16",
+      "status": "APPROVED"
+    },
+    {
+      "id": "1729076492036",
+      "employeeName": "Diane Prince",
+      "email": "dianeprince@caju.com",
+      "cpf": "18135041055",
+      "admissionDate": "2024-09-30",
+      "status": "APPROVED"
+    },
+    {
+      "id": "1729078906402",
+      "employeeName": "Arthur Curry",
+      "email": "arturcurry@caju.com",
+      "cpf": "13766698893",
+      "admissionDate": "2023-12-20",
+      "status": "REPROVED"
     }
   ]
 }

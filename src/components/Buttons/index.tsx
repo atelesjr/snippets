@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Button = styled.button`
+type ButtonPops = {
+  disabled: boolean
+}
+
+const Button = styled.button<ButtonPops>`
   outline: none;
   display: flex;
   align-items: center;
@@ -8,7 +12,7 @@ const Button = styled.button`
   border-radius: 36px;
   padding: 8px 32px;
   background-color: #64a98c;
-  cursor: pointer;
+  cursor: ${({disabled}) => disabled ? 'not-allowed' : 'pointer'};
   height: 56px;
   color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -17,16 +21,16 @@ const Button = styled.button`
 `;
 
 export const ButtonSmall = styled.button<{
-  bgcolor?: string;
-  color?: string;
+  $bgcolor?: string;
+  $color?: string;
 }>`
   font-size: 12px;
   outline: none;
   border-radius: 4px;
   border: none;
   padding: 4px 16px;
-  background-color: ${(props) => props.bgcolor ?? 'none'};
-  color: ${(props) => props.color ?? "#000"};
+  background-color: ${(props) => props.$bgcolor ?? 'none'};
+  color: ${(props) => props.$color ?? "#000"};
   cursor: pointer;
 `;
 

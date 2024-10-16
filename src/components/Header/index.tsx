@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+
   background: rgb(255, 117, 0);
   background: linear-gradient(
     258deg,
@@ -9,10 +17,6 @@ export const Header = styled.header`
   );
   width: 100%;
   height: 64px;
-  position: fixed;
-  top: 0;
-  display: flex;
-  align-items: center;
   padding:0px 24px;
 
   h1 {
