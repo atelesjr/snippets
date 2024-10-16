@@ -22,6 +22,7 @@ export const SearchBar = () => {
         {...register('cpf')}
         $error={(errors.cpf?.message && errors.cpf.message )|| isValidCPF && isValidCPF}
       />
+      {/* teste */}
 
       <S.Actions>
         <IconButton aria-label="refetch">
